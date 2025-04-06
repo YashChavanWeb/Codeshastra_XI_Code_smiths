@@ -62,15 +62,36 @@ const ChatWithAI = () => {
     };
 
     return (
-        <div className="w-full max-w-lg p-4 bg-white rounded-lg shadow-lg flex flex-col gap-4">
-            <div className="flex flex-col space-y-4 overflow-y-auto max-h-[400px] p-4 bg-gray-50 rounded-lg">
-                {conversation.map((msg, index) => (
-                    <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'} space-x-2`}>
-                        <div className={`max-w-xs px-4 py-2 rounded-lg ${msg.sender === 'user' ? 'bg-purple-500 text-white' : 'bg-gray-200'}`}>
-                            <p>{msg.text}</p>
+        <div className="w-full p-4 bg-white rounded-3xl shadow-lg flex flex-col gap-4">
+            <div className="flex flex-col space-y-4 overflow-y-auto max-h-[400px] p-4 bg-gray-50 rounded-3xl">
+            {conversation.map((msg, index) => (
+    <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'} space-x-2`}>
+        {msg.sender === 'AI' && /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})(,\s*#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6}))*$/.test(msg.text) ? (
+            // Render palette instead of plain text
+            <div className="max-w-xs p-4 rounded-3xl bg-gray-200">
+                <p className="font-semibold mb-2 text-sm text-gray-700">AI Generated Palette:</p>
+                <div className="grid grid-cols-3 gap-2">
+                    {msg.text.split(',').map((color, i) => (
+                        <div key={i} className="flex flex-col items-center">
+                            <div
+                                className="w-12 h-12 rounded-md border shadow"
+                                style={{ backgroundColor: color.trim() }}
+                                title={color.trim()}
+                            />
+                            <span className="text-xs font-mono mt-1 text-gray-600">{color.trim()}</span>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
+            </div>
+        ) : (
+            // Normal message bubble
+            <div className={`max-w-xs px-4 py-2 rounded-3xl ${msg.sender === 'user' ? 'bg-purple-500 text-white' : 'bg-gray-200'}`}>
+                <p>{msg.text}</p>
+            </div>
+        )}
+    </div>
+))}
+
                 {loading && <p className="text-center italic text-gray-600">AI is thinking...</p>}
             </div>
 
@@ -80,11 +101,11 @@ const ChatWithAI = () => {
                     value={message}
                     onChange={handleMessageChange}
                     placeholder="Ask something..."
-                    className="flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 p-3 rounded-3xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
                 <button
                     onClick={handleSendMessage}
-                    className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
+                    className="px-6 py-3 bg-purple-500 text-white rounded-3xl hover:bg-purple-600 transition-all"
                 >
                     Send
                 </button>
