@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import bcrypt from 'bcryptjs'; // Import bcryptjs
 
-const PaymentPage = () => {
+const PaymentPage = () => { 
     const location = useLocation();
     const navigate = useNavigate();
     const { plan, price, selectedFeatures } = location.state || {};
