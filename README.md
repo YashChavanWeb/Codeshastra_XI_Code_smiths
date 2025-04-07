@@ -1,113 +1,172 @@
-# 🚀 Codeshastra XI – Code Smiths
+# 🚀 **Codeshastra XI Hackathon – Team Code Smiths**
 
-## 🧰 Project: *ToolBoxHub*
+## 🧰 **Project: _ToolSuite_**
 
-### 💡 Problem Statement
+### 💡 **Problem Statement**
 
 Create a unified, intuitive web platform that consolidates a diverse array of commonly used online tools into one accessible location. The platform aims to boost productivity by eliminating the need for users to navigate across multiple scattered websites. It will serve developers, designers, students, and everyday users—offering both free and subscription-based functionalities.
 
 ---
 
-## ✅ Features Implemented
+## 📺 **View the Project**
 
-### 🔐 1. Authentication & Subscription
-
-- Secure login/signup system.
-- Subscription-based plans with tiered access.
+- **[Demo Video](#)**
+- **[PowerPoint Presentation](#)**
 
 ---
 
-### 🎨 2. Graphic Generator
+### 🌟 **Show Stoppers**
 
-#### ➤ QR Code Generator
+1. **Online Linux Terminal**
 
-- Generate QR codes via URL or text.
+   - An integrated terminal allowing users to run basic Linux commands for quick testing and learning.
 
-#### ➤ Barcode Generator
+2. **Online SQL Query Simulator**
 
-- Supports multiple types: retail, logistics, pharma, imported, etc.
+   - A mock data generator where users can make and test SQL queries.
 
-#### ➤ Color Palette Tools
+3. **User Dashboard**
 
-- Generate palettes by:
-  - Complementary, triadic, analogous methods.
-  - Random palette generator.
-- Convert color formats: HEX, RGB, HSL, etc.
-- Image color picker: Extract dominant colors from images.
+   - View usage statistics and access saved tools and preferences.
 
-#### ➤ Image Format Converter
+4. **Competitive Tools**
 
-- Upload or paste image URL.
-- Convert between formats: JPEG, PNG, WEBP, etc.
+   - Daily/weekly challenges like typing speed tests and coding puzzles to engage users and enhance productivity.
 
----
-
-### 🔁 3. Format Converter
-
-#### ➤ Universal File Converter
-
-- Convert files between: JSON, CSV, YAML, XML.
-- Edit data after uploading files.
-
-#### ➤ Data Formatter & Validator
-
-- Validate JSON, CSV, YAML, XML inputs.
-- Show error locations and suggest corrections.
-
-#### ➤ Code Beautifier
-
-- Beautify and format:
-  - HTML (also allows website scraping)
-  - CSS
-  - JavaScript
+5. **Developers Community**
+   - **Sharing Platform**: Share tools or projects with the community.
+   - **Upvote & Discuss**: Upvote useful resources and engage in discussions with other developers.
 
 ---
 
-### 🧪 4. API Testing & Docs
+### ✅ **Core Features**
 
-- Test client-server APIs using:
-  - Methods: GET, POST, PUT, DELETE
-  - Payloads: JSON, form data, raw
-- Access public APIs for dummy/mock data.
-- Generate code snippets in multiple programming languages.
+1. **Authentication & Subscription**
+
+   - **User Authentication**: Secure login and registration system.
+   - **Subscription Tiers**: Free and premium options with access to additional features.
+
+2. **Graphic Generator**
+
+   - **QR Code Generator**: Generate QR codes for URLs, texts, and more.
+   - **Barcode Generator**: Create barcodes in different formats (EAN, UPC, etc.).
+
+3. **Color Palette Tools**
+
+   - **Pick Color from Image**: Extract and generate color palettes from any image.
+
+4. **Image Format Converter**
+
+   - **JPEG, PNG, WEBP**: Convert images between popular formats.
+   - **Batch Processing**: Convert multiple images at once with customizable settings.
+
+5. **Universal Format Converter**
+
+   - Convert between various data formats like JSON, CSV, YAML, and XML.
+
+6. **Data Formatter & Validator**
+
+   - **Data Formatting**: Format JSON, CSV, YAML, and other formats easily.
+   - **Validator**: Highlight errors in your data and suggest corrections.
+
+7. **API Testing & Dummy APIs Docs**
+   - **API Testing Tools**: Test APIs using methods such as GET, PUT, POST.
+   - **Dummy API Docs**: Access ready-to-use API documentation for testing.
+
+---
+
+### 🚀 **Future Features (Planned)**
+
+- **Integration with Cloud Storage**: Upload and download files directly from popular cloud providers.
+- **Team Collaboration**: Share your workspace with others for team-based projects.
+- **Advanced API Documentation Generator**: Automatically generate comprehensive API documentation from your code.
 
 ---
 
-### 💸 5. Subscription Plans
+### 📜 **Tech Stack**
 
-- Free and Paid tiers.
-- Modify plans based on tool access.
-- Payment integration for seamless upgrades.
+- **Frontend**: React, Tailwind CSS
+- **Backend**: Node.js, Express, MongoDB, JWT
+- **Python**: SQLite3
+
+---
+
+### 🏗️ **Setup Instructions**
+
+To get started with the development of ToolSuite locally, follow these steps:
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/YashChavanWeb/Codeshastra_XI_Code_smiths
+   cd Codeshastra-XI-Code-smiths
+   ```
+
+2. **Install dependencies**:
+
+   - For frontend:
+     ```bash
+     cd frontend
+     npm install
+     ```
+   - For backend:
+     ```bash
+     cd backend
+     npm install
+     ```
+   - For Python:
+     ```bash
+     cd python
+     python -m venv venv
+     .\venv\Scripts\activate
+     pip install -r requirements.txt
+     ```
+
+3. **Set up environment variables**:
+   Create a `.env` file in the root directory for the backend and configure necessary variables like API keys, database URIs, etc.
+
+4. **Run the development servers**:
+
+   - Frontend:
+     ```bash
+     cd frontend
+     npm run dev
+     ```
+   - Backend:
+     ```bash
+     cd backend
+     npm start
+     ```
+   - Python:
+     ```bash
+     cd python
+     python app.py
+     ```
+
+5. **Access the app**:
+   - `http://localhost:5173` for the frontend
+   - `http://localhost:3000` for the backend
+   - `http://localhost:5000` for python.
 
 ---
 
-### Linux Online Terminal
+### 🤝 **Contributing**
 
-- When a file is uploaded, it's converted to a base64 data URL and stored in localStorage under uploadedFile.
-- The filename is shown in the corner.
-- This setup is enough to later simulate passing SSH keys or configs into your embedded Linux terminal — though that part will need JSLinux support for file mounting, or you can display the content in another panel for now.
+We welcome contributions! To contribute to the project:
 
-## 🚧 Upcoming / In-Progress Features
-
-### 📊 1. User Dashboard
-
-- View usage statistics, saved tools, and custom workflows.
-
-### 💻 2. Virtual Linux Terminal
-
-- Integrated terminal with basic Linux commands for quick testing and learning.
-
-### 🧠 3. Competitive Tools
-
-- Daily/weekly challenges like:
-  - Typing speed tests
-  - Coding puzzles
-- Earn badges and achievements.
-
-### 🌐 4. Community Features
-
-- Share tools or projects.
-- Upvote and discuss resources.
-- Follow other users' toolsets and contributions.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Make your changes and commit them (`git commit -am 'Add new feature'`).
+4. Push to your branch (`git push origin feature-name`).
+5. Open a pull request.
 
 ---
+
+### 💬 **Contact**
+
+For inquiries or support, reach us at:  
+**Email**: yashchavan4628@gmail.com
+
+---
+
+Happy coding and enjoy using **ToolSuite**! 🚀
