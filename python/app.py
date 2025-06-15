@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import sqlite3
 from faker import Faker
 import random
+import os
 
 app = Flask(__name__)
 
@@ -127,4 +128,9 @@ def execute_sql():
 
 if __name__ == '__main__':
     create_table()  # Create the table if it doesn't exist
-    app.run(debug=True)
+
+    # Get port from environment variable or default to 5000
+    port = int(os.environ.get("PORT", 5000))
+    
+    # Run the app with host 0.0.0.0 and the dynamic port
+    app.run(host='0.0.0.0', port=port, debug=True)
