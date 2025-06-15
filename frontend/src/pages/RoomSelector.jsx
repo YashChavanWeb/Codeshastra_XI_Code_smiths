@@ -9,7 +9,7 @@ const RoomSelector = () => {
 
   const createRoom = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/room/create', {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/room/create`, {
         text: 'The quick brown fox jumps over the lazy dog',
       });
       navigate(`/test/${response.data.code}`); // Use navigate instead of history.push
@@ -34,7 +34,7 @@ const RoomSelector = () => {
     <div className="flex flex-col justify-center items-center p-4">
       <div className="w-full max-w-md bg-gray-800 text-white rounded-lg shadow-lg p-6">
         <h2 className="text-3xl font-semibold text-center mb-6">Welcome to the Typing Test</h2>
-        
+
         <div className="mb-4">
           <input
             type="text"

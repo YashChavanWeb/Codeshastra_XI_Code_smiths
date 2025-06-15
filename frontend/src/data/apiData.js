@@ -2,7 +2,7 @@ const apiData = {
   'Get users': {
     title: 'Get users',
     description: 'Fetch a list of all users.',
-    endpoint: 'http://localhost:3000/api/users',
+    endpoint: `${import.meta.env.VITE_BACKEND_URL}/api/users`,
     method: 'GET',
     usage: `
     <ul class="list-disc list-inside space-y-1">
@@ -14,20 +14,20 @@ const apiData = {
   `,
     code: {
       javascript: {
-        fetch: `fetch('http://localhost:3000/api/users')
+        fetch: `fetch(\`${import.meta.env.VITE_BACKEND_URL}/api/users\`)
   .then(res => res.json())
   .then(data => console.log(data))
   .catch(err => console.error(err));`,
 
         axios: `import axios from 'axios';
 
-axios.get('http://localhost:3000/api/users')
+axios.get('${import.meta.env.VITE_BACKEND_URL}/api/users')
   .then(response => console.log(response.data))
   .catch(error => console.error(error));`,
 
         http: `const http = require('http');
 
-http.get('http://localhost:3000/api/users', (res) => {
+http.get('${import.meta.env.VITE_BACKEND_URL}/api/users', (res) => {
   let data = '';
   res.on('data', chunk => data += chunk);
   res.on('end', () => console.log(JSON.parse(data)));
@@ -36,50 +36,50 @@ http.get('http://localhost:3000/api/users', (res) => {
       python: {
         requests: `import requests
 
-response = requests.get('http://localhost:3000/api/users')
+response = requests.get('${import.meta.env.VITE_BACKEND_URL}/api/users')
 print(response.json())`,
 
         urllib: `import urllib.request
 import json
 
-with urllib.request.urlopen('http://localhost:3000/api/users') as response:
+with urllib.request.urlopen('${import.meta.env.VITE_BACKEND_URL}/api/users') as response:
     data = json.loads(response.read().decode())
     print(data)`,
 
         httpx: `import httpx
 
-response = httpx.get('http://localhost:3000/api/users')
+response = httpx.get('${import.meta.env.VITE_BACKEND_URL}/api/users')
 print(response.json())`
       },
       ruby: {
         nethttp: `require 'net/http'
 require 'json'
 
-uri = URI('http://localhost:3000/api/users')
+uri = URI('${import.meta.env.VITE_BACKEND_URL}/api/users')
 res = Net::HTTP.get(uri)
 puts JSON.parse(res)`,
 
         httparty: `require 'httparty'
 
-response = HTTParty.get('http://localhost:3000/api/users')
+response = HTTParty.get('${import.meta.env.VITE_BACKEND_URL}/api/users')
 puts response.parsed_response`,
 
         faraday: `require 'faraday'
 require 'json'
 
 conn = Faraday.new
-response = conn.get('http://localhost:3000/api/users')
+response = conn.get('${import.meta.env.VITE_BACKEND_URL}/api/users')
 puts JSON.parse(response.body)`
       },
       php: {
         file_get_contents: `<?php
-$response = file_get_contents('http://localhost:3000/api/users');
+$response = file_get_contents('${import.meta.env.VITE_BACKEND_URL}/api/users');
 $data = json_decode($response, true);
 print_r($data); ?>`,
 
         curl: `<?php
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'http://localhost:3000/api/users');
+curl_setopt($ch, CURLOPT_URL, '${import.meta.env.VITE_BACKEND_URL}/api/users');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
@@ -90,7 +90,7 @@ print_r($data); ?>`,
 require 'vendor/autoload.php';
 
 $client = new GuzzleHttp\\Client();
-$response = $client->request('GET', 'http://localhost:3000/api/users');
+$response = $client->request('GET', '${import.meta.env.VITE_BACKEND_URL}/api/users');
 $data = json_decode($response->getBody(), true);
 print_r($data); ?>`
       },
@@ -101,7 +101,7 @@ print_r($data); ?>`
   'Get user by id': {
     title: 'Get user by ID',
     description: 'Fetch a single user by their unique ID.',
-    endpoint: 'http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad',
+    endpoint: `${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad`,
     method: 'GET',
     usage: `
     <ul class="list-disc list-inside space-y-1">
@@ -113,20 +113,20 @@ print_r($data); ?>`
   `,
     code: {
       javascript: {
-        fetch: `fetch('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad')
+        fetch: `fetch('${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad')
   .then(res => res.json())
   .then(data => console.log(data))
   .catch(err => console.error(err));`,
 
         axios: `import axios from 'axios';
 
-axios.get('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad')
+axios.get('${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad')
   .then(response => console.log(response.data))
   .catch(error => console.error(error));`,
 
         http: `const http = require('http');
 
-http.get('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad', (res) => {
+http.get('${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad', (res) => {
   let data = '';
   res.on('data', chunk => data += chunk);
   res.on('end', () => console.log(JSON.parse(data)));
@@ -135,50 +135,50 @@ http.get('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad', (res) => {
       python: {
         requests: `import requests
 
-response = requests.get('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad')
+response = requests.get('${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad')
 print(response.json())`,
 
         urllib: `import urllib.request
 import json
 
-with urllib.request.urlopen('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad') as response:
+with urllib.request.urlopen('${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad') as response:
     data = json.loads(response.read().decode())
     print(data)`,
 
         httpx: `import httpx
 
-response = httpx.get('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad')
+response = httpx.get('${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad')
 print(response.json())`
       },
       ruby: {
         nethttp: `require 'net/http'
 require 'json'
 
-uri = URI('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad')
+uri = URI('${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad')
 res = Net::HTTP.get(uri)
 puts JSON.parse(res)`,
 
         httparty: `require 'httparty'
 
-response = HTTParty.get('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad')
+response = HTTParty.get('${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad')
 puts response.parsed_response`,
 
         faraday: `require 'faraday'
 require 'json'
 
 conn = Faraday.new
-response = conn.get('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad')
+response = conn.get('${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad')
 puts JSON.parse(response.body)`
       },
       php: {
         file_get_contents: `<?php
-$response = file_get_contents('http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad');
+$response = file_get_contents('${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad');
 $data = json_decode($response, true);
 print_r($data); ?>`,
 
         curl: `<?php
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad');
+curl_setopt($ch, CURLOPT_URL, '${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
@@ -189,7 +189,7 @@ print_r($data); ?>`,
 require 'vendor/autoload.php';
 
 $client = new GuzzleHttp\\Client();
-$response = $client->request('GET', 'http://localhost:3000/api/users/67f0e09f55ea7cfc6a47d8ad');
+$response = $client->request('GET', '${import.meta.env.VITE_BACKEND_URL}/api/users/67f0e09f55ea7cfc6a47d8ad');
 $data = json_decode($response->getBody(), true);
 print_r($data); ?>`
       },
@@ -213,84 +213,84 @@ print_r($data); ?>`
     code: {
       javascript: {
         fetch: `fetch('https://api.freeapi.app/api/v1/public/quotes/quote/random')
-                  .then(res => res.json())
-                  .then(data => console.log(data))
-                  .catch(err => console.error(err));`,
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.error(err));`,
 
         axios: `import axios from 'axios';
-              
-              axios.get('https://api.freeapi.app/api/v1/public/quotes/quote/random')
-                .then(response => console.log(response.data))
-                .catch(error => console.error(error));`,
+          
+          axios.get('https://api.freeapi.app/api/v1/public/quotes/quote/random')
+            .then(response => console.log(response.data))
+            .catch(error => console.error(error));`,
 
         http: `const https = require('https');
-              
-              https.get('https://api.freeapi.app/api/v1/public/quotes/quote/random', (res) => {
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => console.log(JSON.parse(data)));
-              }).on('error', err => console.error(err));`
+          
+          https.get('https://api.freeapi.app/api/v1/public/quotes/quote/random', (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => console.log(JSON.parse(data)));
+          }).on('error', err => console.error(err));`
       },
       python: {
         requests: `import requests
-  
-  response = requests.get('https://api.freeapi.app/api/v1/public/quotes/quote/random')
-  print(response.json())`,
+ 
+response = requests.get('https://api.freeapi.app/api/v1/public/quotes/quote/random')
+print(response.json())`,
 
         urllib: `import urllib.request
-  import json
-  
-  with urllib.request.urlopen('https://api.freeapi.app/api/v1/public/quotes/quote/random') as response:
-      data = json.loads(response.read().decode())
-      print(data)`,
+ import json
+ 
+with urllib.request.urlopen('https://api.freeapi.app/api/v1/public/quotes/quote/random') as response:
+    data = json.loads(response.read().decode())
+    print(data)`,
 
         httpx: `import httpx
-  
-  response = httpx.get('https://api.freeapi.app/api/v1/public/quotes/quote/random')
-  print(response.json())`
+ 
+response = httpx.get('https://api.freeapi.app/api/v1/public/quotes/quote/random')
+print(response.json())`
       },
       ruby: {
         nethttp: `require 'net/http'
-  require 'json'
-  
-  uri = URI('https://api.freeapi.app/api/v1/public/quotes/quote/random')
-  res = Net::HTTP.get(uri)
-  puts JSON.parse(res)`,
+ require 'json'
+ 
+uri = URI('https://api.freeapi.app/api/v1/public/quotes/quote/random')
+res = Net::HTTP.get(uri)
+puts JSON.parse(res)`,
 
         httparty: `require 'httparty'
-  
-  response = HTTParty.get('https://api.freeapi.app/api/v1/public/quotes/quote/random')
-  puts response.parsed_response`,
+ 
+response = HTTParty.get('https://api.freeapi.app/api/v1/public/quotes/quote/random')
+puts response.parsed_response`,
 
         faraday: `require 'faraday'
-  require 'json'
-  
-  conn = Faraday.new
-  response = conn.get('https://api.freeapi.app/api/v1/public/quotes/quote/random')
-  puts JSON.parse(response.body)`
+ require 'json'
+ 
+conn = Faraday.new
+response = conn.get('https://api.freeapi.app/api/v1/public/quotes/quote/random')
+puts JSON.parse(response.body)`
       },
       php: {
         file_get_contents: `<?php
-  $response = file_get_contents('https://api.freeapi.app/api/v1/public/quotes/quote/random');
-  $data = json_decode($response, true);
-  print_r($data); ?>`,
+ $response = file_get_contents('https://api.freeapi.app/api/v1/public/quotes/quote/random');
+ $data = json_decode($response, true);
+ print_r($data); ?>`,
 
         curl: `<?php
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, 'https://api.freeapi.app/api/v1/public/quotes/quote/random');
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  $response = curl_exec($ch);
-  curl_close($ch);
-  $data = json_decode($response, true);
-  print_r($data); ?>`,
+ $ch = curl_init();
+ curl_setopt($ch, CURLOPT_URL, 'https://api.freeapi.app/api/v1/public/quotes/quote/random');
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+ $response = curl_exec($ch);
+ curl_close($ch);
+ $data = json_decode($response, true);
+ print_r($data); ?>`,
 
         guzzle: `<?php
-  require 'vendor/autoload.php';
-  
-  $client = new GuzzleHttp\\Client();
-  $response = $client->request('GET', 'https://api.freeapi.app/api/v1/public/quotes/quote/random');
-  $data = json_decode($response->getBody(), true);
-  print_r($data); ?>`
+ require 'vendor/autoload.php';
+ 
+$client = new GuzzleHttp\\Client();
+$response = $client->request('GET', 'https://api.freeapi.app/api/v1/public/quotes/quote/random');
+$data = json_decode($response->getBody(), true);
+print_r($data); ?>`
       },
     },
   },
@@ -311,84 +311,84 @@ print_r($data); ?>`
     code: {
       javascript: {
         fetch: `fetch('https://api.freeapi.app/api/v1/public/jokes/joke/random')
-                  .then(res => res.json())
-                  .then(data => console.log(data))
-                  .catch(err => console.error(err));`,
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.error(err));`,
 
         axios: `import axios from 'axios';
-              
-              axios.get('https://api.freeapi.app/api/v1/public/jokes/joke/random')
-                .then(response => console.log(response.data))
-                .catch(error => console.error(error));`,
+          
+          axios.get('https://api.freeapi.app/api/v1/public/jokes/joke/random')
+            .then(response => console.log(response.data))
+            .catch(error => console.error(error));`,
 
         http: `const https = require('https');
-              
-              https.get('https://api.freeapi.app/api/v1/public/jokes/joke/random', (res) => {
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => console.log(JSON.parse(data)));
-              }).on('error', err => console.error(err));`
+          
+          https.get('https://api.freeapi.app/api/v1/public/jokes/joke/random', (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => console.log(JSON.parse(data)));
+          }).on('error', err => console.error(err));`
       },
       python: {
         requests: `import requests
-  
-  response = requests.get('https://api.freeapi.app/api/v1/public/jokes/joke/random')
-  print(response.json())`,
+ 
+response = requests.get('https://api.freeapi.app/api/v1/public/jokes/joke/random')
+print(response.json())`,
 
         urllib: `import urllib.request
-  import json
-  
-  with urllib.request.urlopen('https://api.freeapi.app/api/v1/public/jokes/joke/random') as response:
-      data = json.loads(response.read().decode())
-      print(data)`,
+ import json
+ 
+with urllib.request.urlopen('https://api.freeapi.app/api/v1/public/jokes/joke/random') as response:
+    data = json.loads(response.read().decode())
+    print(data)`,
 
         httpx: `import httpx
-  
-  response = httpx.get('https://api.freeapi.app/api/v1/public/jokes/joke/random')
-  print(response.json())`
+ 
+response = httpx.get('https://api.freeapi.app/api/v1/public/jokes/joke/random')
+print(response.json())`
       },
       ruby: {
         nethttp: `require 'net/http'
-  require 'json'
-  
-  uri = URI('https://api.freeapi.app/api/v1/public/jokes/joke/random')
-  res = Net::HTTP.get(uri)
-  puts JSON.parse(res)`,
+ require 'json'
+ 
+uri = URI('https://api.freeapi.app/api/v1/public/jokes/joke/random')
+res = Net::HTTP.get(uri)
+puts JSON.parse(res)`,
 
         httparty: `require 'httparty'
-  
-  response = HTTParty.get('https://api.freeapi.app/api/v1/public/jokes/joke/random')
-  puts response.parsed_response`,
+ 
+response = HTTParty.get('https://api.freeapi.app/api/v1/public/jokes/joke/random')
+puts response.parsed_response`,
 
         faraday: `require 'faraday'
-  require 'json'
-  
-  conn = Faraday.new
-  response = conn.get('https://api.freeapi.app/api/v1/public/jokes/joke/random')
-  puts JSON.parse(response.body)`
+ require 'json'
+ 
+conn = Faraday.new
+response = conn.get('https://api.freeapi.app/api/v1/public/jokes/joke/random')
+puts JSON.parse(response.body)`
       },
       php: {
         file_get_contents: `<?php
-  $response = file_get_contents('https://api.freeapi.app/api/v1/public/jokes/joke/random');
-  $data = json_decode($response, true);
-  print_r($data); ?>`,
+ $response = file_get_contents('https://api.freeapi.app/api/v1/public/jokes/joke/random');
+ $data = json_decode($response, true);
+ print_r($data); ?>`,
 
         curl: `<?php
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, 'https://api.freeapi.app/api/v1/public/jokes/joke/random');
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  $response = curl_exec($ch);
-  curl_close($ch);
-  $data = json_decode($response, true);
-  print_r($data); ?>`,
+ $ch = curl_init();
+ curl_setopt($ch, CURLOPT_URL, 'https://api.freeapi.app/api/v1/public/jokes/joke/random');
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+ $response = curl_exec($ch);
+ curl_close($ch);
+ $data = json_decode($response, true);
+ print_r($data); ?>`,
 
         guzzle: `<?php
-  require 'vendor/autoload.php';
-  
-  $client = new GuzzleHttp\\Client();
-  $response = $client->request('GET', 'https://api.freeapi.app/api/v1/public/jokes/joke/random');
-  $data = json_decode($response->getBody(), true);
-  print_r($data); ?>`
+ require 'vendor/autoload.php';
+ 
+$client = new GuzzleHttp\\Client();
+$response = $client->request('GET', 'https://api.freeapi.app/api/v1/public/jokes/joke/random');
+$data = json_decode($response->getBody(), true);
+print_r($data); ?>`
       },
     },
   },
@@ -409,87 +409,87 @@ print_r($data); ?>`
     code: {
       javascript: {
         fetch: `fetch('https://api.freeapi.app/api/v1/public/products')
-                  .then(res => res.json())
-                  .then(data => console.log(data))
-                  .catch(err => console.error(err));`,
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.error(err));`,
 
         axios: `import axios from 'axios';
-              
-              axios.get('https://api.freeapi.app/api/v1/public/products')
-                .then(response => console.log(response.data))
-                .catch(error => console.error(error));`,
+          
+          axios.get('https://api.freeapi.app/api/v1/public/products')
+            .then(response => console.log(response.data))
+            .catch(error => console.error(error));`,
 
         http: `const https = require('https');
-              
-              https.get('https://api.freeapi.app/api/v1/public/products', (res) => {
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => console.log(JSON.parse(data)));
-              }).on('error', err => console.error(err));`
+          
+          https.get('https://api.freeapi.app/api/v1/public/products', (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => console.log(JSON.parse(data)));
+          }).on('error', err => console.error(err));`
       },
       python: {
         requests: `import requests
-  
-  response = requests.get('https://api.freeapi.app/api/v1/public/products')
-  print(response.json())`,
+ 
+response = requests.get('https://api.freeapi.app/api/v1/public/products')
+print(response.json())`,
 
         urllib: `import urllib.request
-  import json
-  
-  with urllib.request.urlopen('https://api.freeapi.app/api/v1/public/products') as response:
-      data = json.loads(response.read().decode())
-      print(data)`,
+ import json
+ 
+with urllib.request.urlopen('https://api.freeapi.app/api/v1/public/products') as response:
+    data = json.loads(response.read().decode())
+    print(data)`,
 
         httpx: `import httpx
-  
-  response = httpx.get('https://api.freeapi.app/api/v1/public/products')
-  print(response.json())`
+ 
+response = httpx.get('https://api.freeapi.app/api/v1/public/products')
+print(response.json())`
       },
       ruby: {
         nethttp: `require 'net/http'
-  require 'json'
-  
-  uri = URI('https://api.freeapi.app/api/v1/public/products')
-  res = Net::HTTP.get(uri)
-  puts JSON.parse(res)`,
+ require 'json'
+ 
+uri = URI('https://api.freeapi.app/api/v1/public/products')
+res = Net::HTTP.get(uri)
+puts JSON.parse(res)`,
 
         httparty: `require 'httparty'
-  
-  response = HTTParty.get('https://api.freeapi.app/api/v1/public/products')
-  puts response.parsed_response`,
+ 
+response = HTTParty.get('https://api.freeapi.app/api/v1/public/products')
+puts response.parsed_response`,
 
         faraday: `require 'faraday'
-  require 'json'
-  
-  conn = Faraday.new
-  response = conn.get('https://api.freeapi.app/api/v1/public/products')
-  puts JSON.parse(response.body)`
+ require 'json'
+ 
+conn = Faraday.new
+response = conn.get('https://api.freeapi.app/api/v1/public/products')
+puts JSON.parse(response.body)`
       },
       php: {
         file_get_contents: `<?php
-  $response = file_get_contents('https://api.freeapi.app/api/v1/public/products');
-  $data = json_decode($response, true);
-  print_r($data); ?>`,
+ $response = file_get_contents('https://api.freeapi.app/api/v1/public/products');
+ $data = json_decode($response, true);
+ print_r($data); ?>`,
 
         curl: `<?php
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, 'https://api.freeapi.app/api/v1/public/products');
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  $response = curl_exec($ch);
-  curl_close($ch);
-  $data = json_decode($response, true);
-  print_r($data); ?>`,
+ $ch = curl_init();
+ curl_setopt($ch, CURLOPT_URL, 'https://api.freeapi.app/api/v1/public/products');
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+ $response = curl_exec($ch);
+ curl_close($ch);
+ $data = json_decode($response, true);
+ print_r($data); ?>`,
 
         guzzle: `<?php
-  require 'vendor/autoload.php';
-  
-  $client = new GuzzleHttp\\Client();
-  $response = $client->request('GET', 'https://api.freeapi.app/api/v1/public/products');
-  $data = json_decode($response->getBody(), true);
-  print_r($data); ?>`
+ require 'vendor/autoload.php';
+ 
+$client = new GuzzleHttp\\Client();
+$response = $client->request('GET', 'https://api.freeapi.app/api/v1/public/products');
+$data = json_decode($response->getBody(), true);
+print_r($data); ?>`
       },
     },
   },
 };
 
-export default apiData; 
+export default apiData;

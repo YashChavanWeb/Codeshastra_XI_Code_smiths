@@ -145,7 +145,7 @@ To get started with the development of ToolSuite locally, follow these steps:
 
 5. **Access the app**:
    - `http://localhost:5173` for the frontend
-   - `http://localhost:3000` for the backend
+   - `${import.meta.env.VITE_BACKEND_URL}` for the backend
    - `http://localhost:5000` for python.
 
 ---

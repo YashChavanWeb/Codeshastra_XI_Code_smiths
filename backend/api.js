@@ -11,16 +11,23 @@ import networkRoutes from './routes/network.routes.js';
 import postRoutes from './routes/post.routes.js';
 import paymentStoreRoutes from './routes/paymentStore.route.js';
 
-
 // Load environment variables
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5000;
 
+// CORS setup to allow your frontend origin
+const corsOptions = {
+  origin: 'http://localhost:5173', // Replace with your frontend's URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // List allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // List allowed headers
+  credentials: true, // Allow cookies and other credentials
+};
+
 // Middleware
+app.use(cors(corsOptions));  // Applying CORS middleware with the configured options
 app.use(express.json());
-app.use(cors());
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING)

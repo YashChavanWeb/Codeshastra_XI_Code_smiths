@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import bcrypt from 'bcryptjs'; // Import bcryptjs
 
-const PaymentPage = () => { 
+const PaymentPage = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { plan, price, selectedFeatures } = location.state || {};
@@ -57,7 +57,7 @@ const PaymentPage = () => {
                     console.log('Payment successful for user:', username);
 
                     // Now call the backend API to store the payment data
-                    fetch('http://localhost:3000/api/payment/save-payment', {
+                    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/payment/save-payment`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
