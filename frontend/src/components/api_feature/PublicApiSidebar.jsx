@@ -1,5 +1,5 @@
 import React from 'react';
-import apiData from '../../data/apidata';
+import apiData from '../../data/ApiData';
 
 const apiRoutes = Object.keys(apiData);
 
@@ -12,11 +12,10 @@ const PublicApiSidebar = ({ onSelect, selected, isDarkMode }) => {
                     <li
                         key={index}
                         onClick={() => onSelect(route)}
-                        className={`flex justify-between items-center p-2 rounded-lg cursor-pointer transition-all ${
-                            selected === route
-                                ? isDarkMode ? 'bg-[#1f2937]' : 'bg-purple-200'
-                                : isDarkMode ? 'hover:bg-[#1f2937]' : 'hover:bg-purple-100'
-                        }`}
+                        className={`flex justify-between items-center p-2 rounded-lg cursor-pointer transition-all ${selected === route
+                            ? isDarkMode ? 'bg-[#1f2937]' : 'bg-purple-200'
+                            : isDarkMode ? 'hover:bg-[#1f2937]' : 'hover:bg-purple-100'
+                            }`}
                     >
                         <span>{route}</span>
                         <span className="bg-purple-500 text-sm text-black px-2 py-0.5 rounded-full font-semibold">GET</span>
@@ -25,11 +24,10 @@ const PublicApiSidebar = ({ onSelect, selected, isDarkMode }) => {
 
                 <li
                     onClick={() => onSelect('__playground__')}
-                    className={`flex justify-between items-center p-2 rounded-lg cursor-pointer transition-all ${
-                        selected === '__playground__'
-                            ? isDarkMode ? 'bg-[#1f2937]' : 'bg-green-200'
-                            : isDarkMode ? 'hover:bg-[#1f2937]' : 'hover:bg-green-100'
-                    }`}
+                    className={`flex justify-between items-center p-2 rounded-lg cursor-pointer transition-all ${selected === '__playground__'
+                        ? isDarkMode ? 'bg-[#1f2937]' : 'bg-green-200'
+                        : isDarkMode ? 'hover:bg-[#1f2937]' : 'hover:bg-green-100'
+                        }`}
                 >
                     <span>Playground</span>
                     <span className="bg-green-400 text-sm text-black px-2 py-0.5 rounded-full font-semibold">TRY</span>
