@@ -8,7 +8,7 @@ const TypingTest = ({ match }) => {
   const [time, setTime] = useState(0);
   const [username, setUsername] = useState('Player');
   const [results, setResults] = useState([]);
-  const socket = socketIOClient('http://localhost:5000');
+  const socket = socketIOClient(`${import.meta.env.VITE_PYTHON_URL}`);
 
   useEffect(() => {
     const { code } = match.params;
@@ -23,7 +23,7 @@ const TypingTest = ({ match }) => {
     });
 
     // Fetch the test text from the server
-    axios.get(`http://localhost:5000/api/room/${code}`)
+    axios.get(`${import.meta.env.VITE_PYTHON_URL}/api/room/${code}`)
       .then((response) => {
         setText(response.data.text);
       });

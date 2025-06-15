@@ -15,8 +15,6 @@ const NetworkTool = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const API_BASE = 'http://localhost:5000/api/network';
-
   const resetStates = () => {
     setIpResult(null);
     setDnsResult(null);
@@ -30,7 +28,7 @@ const NetworkTool = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.get(`${API_BASE}/ip`);
+      const res = await axios.get(`${import.meta.env.VITE_PYTHON_URL}/ip`);
       setIpResult(res.data);  // Store both public and local IPs
     } catch {
       setError('Failed to fetch IP. Make sure backend is running.');
@@ -43,7 +41,9 @@ const NetworkTool = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.get(`${API_BASE}/dns`, { params: { domain } });
+      const res = await axios.get(`${import.meta.env.VITE_PYTHON_URL}/dns`, {
+        params: { domain }
+      });
       setDnsResult(res.data);
     } catch {
       setError('Failed to fetch DNS. Make sure backend is running.');
@@ -56,7 +56,9 @@ const NetworkTool = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.get(`${API_BASE}/ping`, { params: { host } });
+      const res = await axios.get(`${import.meta.env.VITE_PYTHON_URL}/ping`, {
+        params: { host }
+      });
       setPingResult(res.data);
     } catch {
       setError('Failed to ping host. Make sure backend is running.');
@@ -69,7 +71,9 @@ const NetworkTool = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.get(`${API_BASE}/traceroute`, { params: { host } });
+      const res = await axios.get(`${import.meta.env.VITE_PYTHON_URL}/traceroute`, {
+        params: { host }
+      });
       setTraceResult(res.data);
     } catch {
       setError('Failed to perform traceroute. Make sure backend is running.');
