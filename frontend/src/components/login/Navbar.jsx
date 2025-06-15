@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../Theme/themecontext';
+import { useTheme } from '../Theme/ThemeContext';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -91,7 +91,7 @@ export default function Navbar() {
         ],
     },
   ];
-  
+
 
   return (
     <nav className="bg-black text-white shadow-lg sticky top-0 z-50 font-medium">
@@ -159,8 +159,8 @@ export default function Navbar() {
           )}
         </div>
 
-                {/* Theme Toggle */}
-          <button
+        {/* Theme Toggle */}
+        <button
           onClick={toggleDarkMode}
           className="text-white hover:text-purple-400 transition lg:mr-4 flex-end"
           title="Toggle dark mode"

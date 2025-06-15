@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PublicApiSidebar from './PublicApiSidebar';
 import apiData from '../../data/apidata';
 import PublicApiCodePanel from './PublicApiCodePanel';
-import { useTheme } from '../Theme/themecontext';  // Import the custom hook
+import { useTheme } from '../Theme/ThemeContext';  // Import the custom hook
 
 const PublicApiDocs = () => {
     const { isDarkMode, setIsDarkMode } = useTheme();  // Use the custom hook to get theme
@@ -22,7 +22,7 @@ const PublicApiDocs = () => {
                         <h1 className="text-3xl font-bold">
                             {isPlayground ? 'Custom API Playground' : api?.title}
                         </h1>
-                       
+
                     </div>
 
                     {/* Description */}

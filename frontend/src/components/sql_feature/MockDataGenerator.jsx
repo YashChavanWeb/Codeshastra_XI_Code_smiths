@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker';
 import Papa from 'papaparse';
 import yaml from 'js-yaml';
 import { js2xml } from 'xml-js';
-import { useTheme } from '../Theme/themecontext'; // Adjust if needed
+import { useTheme } from '../Theme/ThemeContext'; // Adjust if needed
 
 export default function MockDataGenerator() {
     const { isDarkMode, toggleTheme } = useTheme();
@@ -75,12 +75,12 @@ export default function MockDataGenerator() {
         <div className={`min-h-screen p-6 transition-colors duration-300 ${isDarkMode
             ? 'bg-gradient-to-b from-black via-purple-400 to-black text-white'
             : 'bg-gradient-to-b from-purple-300 via-white to-purple-300 text-black border-2 border-purple-400'
-        }`}>
+            }`}>
 
             <div className={`max-w-4xl mx-auto p-8 backdrop-blur-2xl rounded-3xl shadow-md border-2 ${isDarkMode
                 ? 'border-purple-300 bg-transparent'
                 : 'border-purple-300 bg-white/70'
-            }`}>
+                }`}>
                 <h2 className="text-2xl font-bold text-center mb-6 text-purple-500">Mock Data Generator</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">

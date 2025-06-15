@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FormatConverter from '../../components/converter_feature/FormatConverter';
 import FormatterAppPage from './formatterappPage';
 import CodeFormatterPage from './CodeFormatterPage';
-import { useTheme } from '../../components/Theme/themecontext'; // Import the useTheme hook
+import { useTheme } from '../../components/Theme/ThemeContext'; // Import the useTheme hook
 
 const tabs = [
   { id: 'format', label: 'Universal Converter' },
@@ -44,11 +44,10 @@ const FormatConverterPage = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 rounded-full transition-all duration-200 font-medium ${
-                activeTab === tab.id
+              className={`px-4 py-2 rounded-full transition-all duration-200 font-medium ${activeTab === tab.id
                   ? 'bg-white text-purple-800'
                   : 'text-white hover:bg-purple-600'
-              }`}
+                }`}
             >
               {tab.label}
             </button>

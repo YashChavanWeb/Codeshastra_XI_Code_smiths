@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { useTheme } from '../../components/Theme/themecontext';
+import { useTheme } from '../../components/Theme/ThemeContext';
 
 const ImageConverter = () => {
   const { isDarkMode, toggleTheme } = useTheme(); // Use the theme context
@@ -73,18 +73,17 @@ const ImageConverter = () => {
       className={`min-h-screen p-6 transition-colors duration-300 ${isDarkMode
         ? 'bg-gradient-to-b from-black via-purple-400 to-black text-white'
         : 'bg-gradient-to-b from-purple-300 via-white to-purple-300 text-black'
-      }`}
+        }`}
     >
       <div className="flex justify-end mb-4">
         {/* Remove the button for theme toggle */}
       </div>
 
       <div
-        className={`max-w-3xl mx-auto mt-6 p-8 backdrop-blur-2xl rounded-3xl shadow-md border-2 ${
-          isDarkMode
+        className={`max-w-3xl mx-auto mt-6 p-8 backdrop-blur-2xl rounded-3xl shadow-md border-2 ${isDarkMode
             ? 'border-purple-300 bg-transparent'
             : 'border-purple-300 bg-white/70'
-        }`}
+          }`}
       >
         <h2 className="text-2xl font-bold mb-6 text-center text-purple-400">Image Converter</h2>
 
@@ -93,11 +92,10 @@ const ImageConverter = () => {
           onDrop={handleDrop}
           onDragOver={(e) => e.preventDefault()}
           onClick={handleBrowseClick}
-          className={`w-full border-2 border-dashed rounded-xl p-6 text-center cursor-pointer mb-6 transition ${
-            isDarkMode
+          className={`w-full border-2 border-dashed rounded-xl p-6 text-center cursor-pointer mb-6 transition ${isDarkMode
               ? 'border-purple-400 bg-purple-50/20 hover:bg-purple-50/40'
               : 'border-purple-300 bg-purple-100 hover:bg-purple-200'
-          }`}
+            }`}
         >
           {imagePreview ? (
             <img src={imagePreview} alt="Preview" className="max-h-60 mx-auto rounded" />
@@ -120,30 +118,27 @@ const ImageConverter = () => {
           type="text"
           placeholder="Or paste image URL (https://...)"
           onBlur={handleImageURL}
-          className={`w-full px-4 py-2 rounded-3xl mb-4 focus:outline-none focus:ring-2 ${
-            isDarkMode
+          className={`w-full px-4 py-2 rounded-3xl mb-4 focus:outline-none focus:ring-2 ${isDarkMode
               ? 'bg-purple-900/70 text-white focus:ring-purple-300'
               : 'bg-purple-100 text-black focus:ring-purple-500'
-          }`}
+            }`}
         />
 
         {/* Format Dropdown */}
         <div className="flex items-center gap-4 mb-6">
           <label
-            className={`font-medium text-sm ${
-              isDarkMode ? 'text-gray-300' : 'text-gray-700'
-            }`}
+            className={`font-medium text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-700'
+              }`}
           >
             Convert to:
           </label>
           <select
             value={format}
             onChange={(e) => setFormat(e.target.value)}
-            className={`flex-1 px-4 py-2 rounded-3xl focus:outline-none focus:ring-2 ${
-              isDarkMode
+            className={`flex-1 px-4 py-2 rounded-3xl focus:outline-none focus:ring-2 ${isDarkMode
                 ? 'bg-purple-900/70 text-white focus:ring-purple-300'
                 : 'bg-purple-100 text-black focus:ring-purple-500'
-            }`}
+              }`}
           >
             <option value="png">PNG</option>
             <option value="jpg">JPG</option>
@@ -155,11 +150,10 @@ const ImageConverter = () => {
         {/* Convert Button */}
         <button
           onClick={handleConvert}
-          className={`w-full py-2 rounded-3xl font-semibold text-lg transition-all disabled:opacity-50 ${
-            isDarkMode
+          className={`w-full py-2 rounded-3xl font-semibold text-lg transition-all disabled:opacity-50 ${isDarkMode
               ? 'bg-purple-700 text-white hover:bg-purple-600 border border-purple-300'
               : 'bg-purple-900 text-white hover:bg-purple-700 border border-purple-300'
-          }`}
+            }`}
           disabled={!imageFile}
         >
           Convert Image
