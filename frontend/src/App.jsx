@@ -77,7 +77,7 @@ function App() {
             <Route path="/payment" element={<PaymentPage />} />
             <Route path="/payment/status" element={<PaymentStatus />} /> {/* Updated PaymentStatus Route */}
 
-            {/* Graphic/Image Features */}
+            {/* Graphic/Image Features  */}
             <Route path="/graphic" element={<GraphicSuite />} />
             <Route path="/image" element={<ImageConverter />} />
             <Route path="/color" element={<ColorFeature />} />
