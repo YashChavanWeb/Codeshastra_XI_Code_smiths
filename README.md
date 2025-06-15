@@ -10,8 +10,9 @@ Create a unified, intuitive web platform that consolidates a diverse array of co
 
 ## 📺 **View the Project**
 
-- **[Demo Video](#)**
-- **[PowerPoint Presentation](#)**
+- **[Demo Video](https://drive.google.com/file/d/1aLrQCO2dW47nmAMfGSQ4nHGjge5u6gHi/view?usp=sharing)**
+- **[Powerpoint Presentation](https://drive.google.com/file/d/15RxO-FhbjL-GLeqxmumtRasaKPSMEOKO/view?usp=sharing)**
+
 
 ---
 
